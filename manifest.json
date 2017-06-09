@@ -1,0 +1,32 @@
+{
+	// 必须的字段
+  "name": "千家铺微信数据采集",
+  "version": "1.1.0",
+  "manifest_version": 2,
+  // 建议提供的字段
+  "description": "千家铺微信公众号数据采集插件,请在微信后台首页(https://mp.weixin.qq.com)运行此插件",
+  "icons": { 
+    "16": "img/icon16.png",             
+    "48": "img/icon48.png",            
+    "128": "img/icon128.png" 
+  },
+  "background": {
+    "scripts": ["appjs/background.js"]
+  },
+  "browser_action": {
+	"default_title": "",
+	"default_icon": "img/icon19.png",
+	"default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mp.weixin.qq.com/cgi-bin/home*"],
+      /*"css": ["mystyles.css"],*/
+      "js": ["appjs/content.js"]
+    }
+  ],
+  "permissions": [
+    "*://*.qianjiapu.com/",
+	"*://localhost/"
+  ]
+}
